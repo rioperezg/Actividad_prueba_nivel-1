@@ -1,9 +1,6 @@
 import csv
 import config
-from Coche import Coche
-from Camioneta import Camioneta
-from Bicicleta import Bicicleta
-from Motocicleta import Motocicleta
+
 class Vehiculo:
     def __init__(self, nbast, color, ruedas):
         self.nbast = nbast
@@ -15,72 +12,53 @@ class Vehiculos:
     Vehiculos = []
     with open(config.DATABASE_PATH, newline='\n') as fichero:
         reader = csv.reader(fichero, delimiter=';')
-        for dni, nombre, apellido in reader:
-            cliente = Cliente(dni, nombre, apellido)
-            lista.append(cliente)
-
-    
-
-"""
-class Cliente:
-    def __init__(self, dni, nombre, apellido):
-        self.dni = dni
-        self.nombre = nombre
-        self.apellido = apellido
-
-    def __str__(self):
-        return f"({self.dni}) {self.nombre} {self.apellido}"
-
-    def to_dict(self):
-        return {'dni': self.dni, 'nombre': self.nombre, 'apellido': self.apellido}
-
-
-class Clientes:
-
-    lista = []
-    with open(config.DATABASE_PATH, newline='\n') as fichero:
-        reader = csv.reader(fichero, delimiter=';')
-        for dni, nombre, apellido in reader:
-            cliente = Cliente(dni, nombre, apellido)
-            lista.append(cliente)
+        for nbast, color, ruedas in reader:
+            vehiculo = Vehiculo(nbast, color, ruedas)
+            Vehiculos.append(vehiculo)
 
     @staticmethod
-    def buscar(dni):
-        for cliente in Clientes.lista:
-            if cliente.dni == dni:
-                return cliente
+    def catalogar(ruedas):
+        sum = 0
+        for vehiculo in Vehiculos.Vehiculos:
+            if vehiculo.ruedas == ruedas:
+                sum += 1
+                print(vehiculo)
+        return "se han encontrado {} vehiculos con {} ruedas".format(sum, ruedas)
 
     @staticmethod
-    def crear(dni, nombre, apellido):
-        cliente = Cliente(dni, nombre, apellido)
-        Clientes.lista.append(cliente)
-        Clientes.guardar()
-        return cliente
+    def buscar(nbast):
+        for vehiculo in Vehiculos.Vehiculos:
+            if vehiculo.nbast == nbast:
+                return vehiculo
 
     @staticmethod
-    def modificar(dni, nombre, apellido):
-        for indice, cliente in enumerate(Clientes.lista):
-            if cliente.dni == dni:
-                Clientes.lista[indice].nombre = nombre
-                Clientes.lista[indice].apellido = apellido
-                Clientes.guardar()
-                return Clientes.lista[indice]
+    def crear(nbast, color, ruedas):
+        vehiculo = Vehiculo(nbast, color, ruedas)
+        Vehiculos.Vehiculos.append(vehiculo)
+        Vehiculos.guardar()
+        return vehiculo
 
     @staticmethod
-    def borrar(dni):
-        for indice, cliente in enumerate(Clientes.lista):
-            if cliente.dni == dni:
-                cliente = Clientes.lista.pop(indice)
-                Clientes.guardar()
-                return cliente
+    def modificar(nbast, color, ruedas):
+        for indice, vehiculo in enumerate(Vehiculos.Vehiculos):
+            if vehiculo.nbast == nbast:
+                Vehiculos.Vehiculos[indice].color = color
+                Vehiculos.Vehiculos[indice].ruedas = ruedas
+                vehiculo.guardar()
+                return Vehiculos.Vehiculos[indice]
+
+    @staticmethod
+    def borrar(nbast):
+        for indice, vehiculo in enumerate(Vehiculos.Vehiculos):
+            if vehiculo.nbast == nbast:
+                vehiculo = Vehiculos.Vehiculos.pop(indice)
+                Vehiculos.guardar()
+                return vehiculo
 
     @staticmethod
     def guardar():
         with open(config.DATABASE_PATH, 'w', newline='\n') as fichero:
             writer = csv.writer(fichero, delimiter=';')
-            for cliente in Clientes.lista:
-                writer.writerow((cliente.dni, cliente.nombre, cliente.apellido))
-
-"""
-
+            for vehiculo in Vehiculos.Vehiculos:
+                writer.writerow((vehiculo.nbast, vehiculo.color, vehiculo.ruedas))            
 
