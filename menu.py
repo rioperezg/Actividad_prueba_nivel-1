@@ -1,3 +1,4 @@
+from Database import Vehiculos
 def iniciar():
     while True:
 
@@ -16,10 +17,15 @@ def iniciar():
         opcion = input("> ")
 
         if opcion == "1":
-            print("Listando los clientes")
-            break
+            print("Listando los clientes...\n")
+            for vehiculo in Vehiculos.Vehiculos:
+                print(vehiculo)
 
-        # if opcion == 2:
+        if opcion == 2:
+            print("Buscando los clientes...\n")
+            nbast = input("Numero de bastidor(2 int y 1 chr) > ")
+            vehiculo = Vehiculos.buscar(nbast=nbast)
+            print(vehiculo) if vehiculo else print("Vehiculo no encontrado.")
 
 
         # if opcion == 3:
