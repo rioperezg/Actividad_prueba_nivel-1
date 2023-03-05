@@ -1,7 +1,7 @@
-from Vehiculo import Vehiculo
+from Database import Vehiculo
 class Coche(Vehiculo):
-    def __init__(self, color, ruedas, velocidad, cilindrada):
-        Vehiculo.__init__(self, color, ruedas)
+    def __init__(self, nbast, color, ruedas, velocidad, cilindrada):
+        super().__init__(nbast, color, ruedas, velocidad, cilindrada)
         self.velocidad = velocidad
         self.cilindrada = cilindrada
     def __str__(self):

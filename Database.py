@@ -1,32 +1,27 @@
-from Vehiculo import Vehiculo
+import csv
+import config
 from Coche import Coche
 from Camioneta import Camioneta
 from Bicicleta import Bicicleta
 from Motocicleta import Motocicleta
 class Vehiculo:
-    def __init__(self, color, ruedas):
+    def __init__(self, nbast, color, ruedas):
+        self.nbast = nbast
         self.color = color
         self.ruedas = ruedas
     def __str__(self):
         return "El vehiculo es de color {}, y tiene {} ruedas".format(self.color, self.ruedas)
 class Vehiculos:
     Vehiculos = []
-    def lista_de_Vehiculos():
-        Porsche = Coche.__init__("Amarillo", 4, 200, 800)
-        Vehiculos.append(Porsche)
-        Renault = Camioneta.__init__("Blanco", 6, 150, 800, 1000)
-        Vehiculos.append(Renault)
-        Bici = Bicicleta.__init__("Rojo", 2, "Deportiva")
-        Vehiculos.append(Bici)
-        Yamaha = Motocicleta.__init__("Amarillo", 2, 200, 750)
-        Vehiculos.append(Yamaha)
-    def Catalogar(Lista = Vehiculos):
-        for Lista in Lista:
-            print(Lista)
-    @Catalogar("ruedas")
-    def Catalogo(ruedas):
+    with open(config.DATABASE_PATH, newline='\n') as fichero:
+        reader = csv.reader(fichero, delimiter=';')
+        for dni, nombre, apellido in reader:
+            cliente = Cliente(dni, nombre, apellido)
+            lista.append(cliente)
 
+    
 
+"""
 class Cliente:
     def __init__(self, dni, nombre, apellido):
         self.dni = dni
@@ -86,6 +81,6 @@ class Clientes:
             for cliente in Clientes.lista:
                 writer.writerow((cliente.dni, cliente.nombre, cliente.apellido))
 
-
+"""
 
 
