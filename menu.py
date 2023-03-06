@@ -1,4 +1,11 @@
-from Database import Vehiculos 
+from Database import Vehiculos
+from Database import Vehiculo
+import Coche
+import Camioneta    
+import Formula1
+import Bicicleta
+import Motocicleta
+import Quad
 def iniciar():
     while True:
 
