@@ -1,5 +1,5 @@
 from Database import Vehiculos
-from Database import Vehiculo
+from vehiculo import Vehiculo
 import Coche
 import Camioneta    
 import Formula1

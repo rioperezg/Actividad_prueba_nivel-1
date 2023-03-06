@@ -6,7 +6,7 @@ import Bicicleta
 import Motocicleta
 import Quad
 import Formula1
-import Vehiculo
+from vehiculo import Vehiculo
 
 class Vehiculos:
     Vehiculos = []

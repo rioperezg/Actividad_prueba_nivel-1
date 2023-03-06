@@ -1,4 +1,4 @@
-from Database import Vehiculo
+from vehiculo import Vehiculo
 class Bicicleta(Vehiculo):
     def __init__(self, nbast, color, ruedas, tipo):
         super().__init__(nbast, color, ruedas, tipo)
