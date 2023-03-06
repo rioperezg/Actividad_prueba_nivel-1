@@ -1,5 +1,11 @@
 from Database import Vehiculos 
 from Database import Vehiculo
+import Coche
+import Camioneta
+import Formula1
+import Bicicleta
+import Motocicleta
+import Quad
 def iniciar():
     while True:
 
@@ -30,6 +36,14 @@ def iniciar():
 
         if opcion == "3":
             print("Añadiendo un vehiculo...\n")
+            print("Tipo de vehiculo?:\n(Coche, Camioneta, Formula1, Bicicleta, Motocicleta, Quad)")
+            Type = input(" > ")
+            if Type == "Coche":
+            elif Type == "Camioneta":
+            elif Type == "Camioneta":
+            elif Type == "Camioneta":
+            elif Type == "Camioneta":
+            elif Type == "Camioneta":
             nbast = input("Numero de bastidor(2 int y 1 chr) > ")
             color = input("Color > ")
             ruedas = input("Numero de ruedas > ")
@@ -70,5 +84,5 @@ def iniciar():
             break
 
         input("\nPresiona ENTER para continuar...") 
-        
+
 print(iniciar())                    
