@@ -44,7 +44,7 @@ class Vehiculos:
             if vehiculo.nbast == nbast:
                 Vehiculos.Vehiculos[indice].color = color
                 Vehiculos.Vehiculos[indice].ruedas = ruedas
-                vehiculo.guardar()
+                Vehiculos.guardar()
                 return Vehiculos.Vehiculos[indice]
 
     @staticmethod

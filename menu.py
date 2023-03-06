@@ -1,4 +1,5 @@
-from Database import Vehiculos
+from Database import Vehiculos 
+from Database import Vehiculo
 def iniciar():
     while True:
 
@@ -17,28 +18,57 @@ def iniciar():
         opcion = input("> ")
 
         if opcion == "1":
-            print("Listando los clientes...\n")
+            print("Listando los vehiculos...\n")
             for vehiculo in Vehiculos.Vehiculos:
                 print(vehiculo)
 
-        if opcion == 2:
-            print("Buscando los clientes...\n")
+        if opcion == "2":
+            print("Buscando los vehiculos...\n")
             nbast = input("Numero de bastidor(2 int y 1 chr) > ")
             vehiculo = Vehiculos.buscar(nbast=nbast)
             print(vehiculo) if vehiculo else print("Vehiculo no encontrado.")
 
+        if opcion == "3":
+            print("Añadiendo un vehiculo...\n")
+            nbast = input("Numero de bastidor(2 int y 1 chr) > ")
+            color = input("Color > ")
+            ruedas = input("Numero de ruedas > ")
+            velocidad = input("Velocidad del coche(km/h) > ")
+            Cilindrada = input("Cilindrada del coche(cc) > ")
+            Carga = input("Carga de la camioneta(kg) > ")
+            Tipo = input("Tipo de Bicicleta > ")
+            speed = input("Velocidad de la motocicleta(km/h) > ")
+            cilindrada = input("Cilindrada de la motocicleta(cc) > ")
+            carga = input("Carga del quad(kg) > ")
+            vehiculo = Vehiculos.crear(nbast,color,ruedas,velocidad,Cilindrada,Carga,Tipo,speed,cilindrada,carga)
+            print("Vehiculo añadido")
+            
+        if opcion == 4:
+            print("Modificando un vehiculo...\n")
+            nbast = input("Introduzca el numero de bastidor para encontrar el vehiculo(2 int y 1 chr) > ")
+            vehiculo = Vehiculos.buscar(nbast)
+            if vehiculo:
+                Vehiculos.modificar(nbast)
+            else:
+                print("Vehiculo no encontrado")
 
-        # if opcion == 3:
+        if opcion == 5:
+            print("Borrando un Vehiculo...\n")
+            nbast = input("introduzca el numero de bastidor para boorar el vehiculo(2 int y 1 chr) > ")
+            if vehiculo:
+                Vehiculos.borrar(nbast)
+            else:
+                print("Vehiculo no encontrado")
 
+        if opcion == 6:
+            print("Catalogando un vehiculo...\n")
+            ruedas = input("Numero de ruedas > ")
+            Vehiculos.catalogar(ruedas)
 
-        # if opcion == 4:
+        if opcion == 7:
+            print("Saliendo...\n")
+            break
 
-
-        # if opcion == 5:
-
-
-        # if opcion == 6:
-
-
-        # if opcion == 7: 
+        input("\nPresiona ENTER para continuar...") 
+        
 print(iniciar())                    
