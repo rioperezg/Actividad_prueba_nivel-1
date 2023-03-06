@@ -1,11 +1,11 @@
 import csv
 import config
-import Coche
-import Camioneta
-import Bicicleta
-import Motocicleta
-import Quad
-import Formula1
+from Coche import Coche
+from Camioneta import Camioneta
+from Bicicleta import Bicicleta
+from Motocicleta import Motocicleta
+from Quad import Quad
+from Formula1 import Formula1
 from vehiculo import Vehiculo
 
 class Vehiculos:
