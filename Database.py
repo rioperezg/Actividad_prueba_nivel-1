@@ -67,7 +67,7 @@ class Vehiculos:
 
     @staticmethod
     def crear_Bici(nbast, color, ruedas, tipo):
-        vehiculo = Bicicleta(nbast, color, ruedas, Tipo)
+        vehiculo = Bicicleta(nbast, color, ruedas, tipo)
         Vehiculos.Vehiculos.append(vehiculo)
         Vehiculos.guardar()
         return vehiculo
