@@ -40,45 +40,45 @@ class Vehiculos:
     
     @staticmethod
     def crear_Coche(nbast, color, ruedas, velocidad, Cilindrada):
-        vehiculo = Coche(nbast, color, ruedas, velocidad, Cilindrada)
-        Vehiculos.Vehiculos.append(vehiculo)
+        car = Coche(nbast, color, ruedas, velocidad, Cilindrada)
+        Vehiculos.Vehiculos.append(car)
         Vehiculos.guardar()
-        return vehiculo
+        return car
 
     @staticmethod
     def crear_Cam(nbast, color, ruedas, velocidad, Cilindrada, Carga):
-        vehiculo = Camioneta(nbast, color, ruedas, velocidad, Cilindrada, Carga)
-        Vehiculos.Vehiculos.append(vehiculo)
+        van = Camioneta(nbast, color, ruedas, velocidad, Cilindrada, Carga)
+        Vehiculos.Vehiculos.append(van)
         Vehiculos.guardar()
-        return vehiculo
+        return van
 
     @staticmethod
     def crear_F1(nbast, color, ruedas, velocidad, Cilindrada, Equipo):
-        vehiculo = Formula1(nbast, color, ruedas, velocidad, Cilindrada, Equipo)
-        Vehiculos.Vehiculos.append(vehiculo)
+        For1 = Formula1(nbast, color, ruedas, velocidad, Cilindrada, Equipo)
+        Vehiculos.Vehiculos.append(For1)
         Vehiculos.guardar()
-        return vehiculo
+        return For1
 
     @staticmethod
     def crear_Bici(nbast, color, ruedas, tipo):
-        vehiculo = Bicicleta(nbast, color, ruedas, tipo)
-        Vehiculos.Vehiculos.append(vehiculo)
+        bike = Bicicleta(nbast, color, ruedas, tipo)
+        Vehiculos.Vehiculos.append(bike)
         Vehiculos.guardar()
-        return vehiculo
+        return bike
 
     @staticmethod
     def crear_Moto(nbast, color, ruedas, tipo, velocidad, cilindrada):
-        vehiculo = Motocicleta(nbast, color, ruedas, tipo, velocidad, cilindrada)
-        Vehiculos.Vehiculos.append(vehiculo)
+        Motbike = Motocicleta(nbast, color, ruedas, tipo, velocidad, cilindrada)
+        Vehiculos.Vehiculos.append(Motbike)
         Vehiculos.guardar()
-        return vehiculo
+        return Motbike
 
     @staticmethod
     def crear_Quad(nbast, color, ruedas, velocidad, Cilindrada, tipo, carga):
-        vehiculo = Quad(nbast, color, ruedas, velocidad, Cilindrada, tipo, carga)
-        Vehiculos.Vehiculos.append(vehiculo)
+        quad = Quad(nbast, color, ruedas, velocidad, Cilindrada, tipo, carga)
+        Vehiculos.Vehiculos.append(quad)
         Vehiculos.guardar()
-        return vehiculo
+        return quad
 
     @staticmethod
     def modificar(nbast, color, ruedas):
